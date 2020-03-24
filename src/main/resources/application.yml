@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: gatewat-loadbalancer-demo
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      routes:
+        - id: my-service
+          uri: lb://my-service
+          predicates:
+            - Path=/service/**
+          filters:
+            - RewritePath=/service(?<segment>/?.*), $\{segment}
+        - id: app-service
+          uri: lb://app-service
+          predicates:
+            - Path=/app/**
+          filters:
+            - RewritePath=/app(?<segment>/?.*), $\{segment}
+
+application:
+  load-balancer-clients:
+    my-service:
+      - host: 127.0.0.1
+        port: 9001
+        secure: false
+      - host: 127.0.0.1
+        port: 9011
+        secure: false
+    app-service:
+      - host: 127.0.0.1
+        port: 9002
+        secure: false
+      - host: 127.0.0.1
+        port: 9022
+        secure: false
