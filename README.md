@@ -1,8 +1,5 @@
 ## spring-cloud-gateway customer loadbalancer
-
-
 > 简化的`Spring Cloud Gateway`负载均衡,没有使用服务发现组件。
-
 
 `pom` 引入loadbalancer依赖
 ```xml
@@ -58,6 +55,8 @@ spring:
 
 
 Reference Document :
-https://spring.io/guides/gs/spring-cloud-loadbalancer/
-https://cloud.spring.io/spring-cloud-commons/reference/html/#spring-cloud-loadbalancer
-https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.0.RC2/reference/html/#reactive-loadbalancer-client-filter
+> https://spring.io/guides/gs/spring-cloud-loadbalancer/
+
+> https://cloud.spring.io/spring-cloud-commons/reference/html/#spring-cloud-loadbalancer
+
+> https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.0.RC2/reference/html/#reactive-loadbalancer-client-filter
