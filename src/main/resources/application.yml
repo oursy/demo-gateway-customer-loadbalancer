@@ -5,6 +5,8 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
+      health-check:
+        interval: 5s
     gateway:
       routes:
         - id: my-service
@@ -19,7 +21,14 @@ spring:
             - Path=/app/**
           filters:
             - RewritePath=/app(?<segment>/?.*), $\{segment}
-
+      loadbalancer:
+        use404: true
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5s
+        max-header-size: 10KB
+  http:
+    log-request-details: true
 application:
   load-balancer-clients:
     my-service:
@@ -36,3 +45,8 @@ application:
       - host: 127.0.0.1
         port: 9022
         secure: false
+logging:
+  level:
+    org.springframework.cloud.gateway.filter: trace
+    org.springframework.web.reactive.function.client: trace
+

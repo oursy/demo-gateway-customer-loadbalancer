@@ -59,4 +59,4 @@ Reference Document :
 
 > https://cloud.spring.io/spring-cloud-commons/reference/html/#spring-cloud-loadbalancer
 
-> https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.0.RC2/reference/html/#reactive-loadbalancer-client-filter
+> https://cloud.spring.io/spring-cloud-gateway/reference/html/#reactive-loadbalancer-client-filter
