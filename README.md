@@ -27,8 +27,7 @@ application:
         port: 9022
         secure: false
 ```
-> 该配置定义了2个服务实例信息。分别为 my-service, app-service 
-
+> 该配置定义了2个服务实例信息。分别为 my-service, app-service .  默认负载均衡基于轮询算法实现, 实现`RoundRobinLoadBalancer`
 gateway 配置信息
 
 ```yml
